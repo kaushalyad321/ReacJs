@@ -1,6 +1,6 @@
 function UserButton({ buttonName, buttonColor }) {
   const mystyle = {
-    color: buttonColor
+    color: buttonColor,
   };
   return (
     <>
