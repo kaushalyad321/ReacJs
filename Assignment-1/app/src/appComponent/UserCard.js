@@ -4,7 +4,7 @@ function UserCard({name,email,avatarURL}){
           <>
            <p>My name is : {name}</p>
            <p>My email address is : {email}</p>
-           <img src={avatarURL} alt="BigCo Inc. logo"/>
+           <img src={avatarURL} alt="BigCo Inc. logo" style={{width:'150px'}}/>
            </>
 
       ) ;

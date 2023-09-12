@@ -1,4 +1,4 @@
-function Greeting(){
-     return  "Hello, React!"  ;
+function Greeting() {
+  return "Hello, React!";
 }
-export default Greeting ;
+export default Greeting;

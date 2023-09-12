@@ -1,16 +1,11 @@
+function TaskList({ task }) {
+  return (
+    <ol>
+      {task.map((assignedWork) => (
+        <li className="user">{assignedWork}</li>
+      ))}
+    </ol>
+  );
+}
 
-function TaskList({task}){
-        return (
-           <ol>
-            {
-              task.map((user) => (
-              <li className="user">{user}</li>
-            ))
-            }
-            </ol>
-    
-        );
-      
-      };
-
-export default TaskList 
+export default TaskList;
