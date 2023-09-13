@@ -1,10 +1,10 @@
 function UserButton({ buttonName, buttonColor }) {
-  const mystyle = {
+  const buttonStyle = {
     color: buttonColor,
   };
   return (
     <>
-      <button style={mystyle}> {buttonName} </button>
+      <button style={buttonStyle}> {buttonName} </button>
     </>
   );
 }
