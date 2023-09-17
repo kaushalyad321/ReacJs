@@ -1,8 +1,9 @@
 import React from "react";
+import { useEffect ,useState} from "react";
 const Clock = () => {
-  const [time, setTime] = React.useState("");
-     // Logic, computation to update time (which is side-effect) should put inside useEffect
-  React.useEffect(() => {
+  const [time, setTime] = useState("");
+  // Logic, computation to update time (which is side-effect) should put inside useEffect
+  useEffect(() => {
     // Running side-effect when component mounted (componentDidMount)
     const myInterval = setInterval(() => {
       setTime(new Date().toLocaleTimeString());
