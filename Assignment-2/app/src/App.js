@@ -1,7 +1,7 @@
 import "./App.css";
 import Counter from "./Component/Counter";
 import PersonForm from "./Component/PersonForm";
-import RandomNumberGenerator from "./Component/RandomNumberGenerator";
+import RandomNumberGenerator from "./Component/RandomNumberGenerator.js";
 import CounterWithStep from "./Component/CounterWithStep";
 import Clock from "./Component/Clock";
 import Notification from "./Component/Notification";
