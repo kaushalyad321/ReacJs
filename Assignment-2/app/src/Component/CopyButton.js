@@ -3,7 +3,7 @@ import useClipboard from "./UseClipboard";
 import ClipboardIcon from "./ClipboardIcon";
 import SuccessIcon from "./SuccessIcon";
 function CopyButton({ code }) {
-  const [isCopied, handleCopy] = useClipboard(5000); //copied will be reset after 2 seconds
+  const [isCopied, handleCopy] = useClipboard(1300); //copied will be reset after 2 seconds
   const [content ,setContent] =useState() ;
 
   return (

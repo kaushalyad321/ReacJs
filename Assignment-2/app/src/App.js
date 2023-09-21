@@ -185,9 +185,7 @@ function App() {
       </p>
       <h1>Default timer value is 100</h1>
       <UseTimer timeValue={100}/>
-      <h1>Default timer value is 80</h1>
-
-      <UseTimer timeValue={80} />
+      
     </>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const UseTimer = ({ timeValue }) => {
-  const [updatedTimeValue, setUpdatedTimeValue] = useState(timeValue);
+const UseTimer = () => {
+  const [updatedTimeValue, setUpdatedTimeValue] = useState(100);
   const [continueOrNot, setContinueOrNot] = useState(false);
   const updateTimer = () => {
     if (continueOrNot === true && updatedTimeValue > 0) {
@@ -9,54 +9,58 @@ const UseTimer = ({ timeValue }) => {
         setUpdatedTimeValue(updatedTimeValue - 1);
       }, 1000);
     }
-  };
-  updateTimer();
-  return (
-    <div>
-      <div
-        style={{ display: "flex", justifyContent: "center", fontSize: "40px" }}
-      >
-        CLOCK TIMER
-      </div>
-      <div
-        style={{
-          fontSize: "30px",
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "20px",
+  } ;
+  updateTimer()
+  return ( <div>
+    <div
+      style={{ display: "flex", justifyContent: "center", fontSize: "40px" }}
+    >
+      CLOCK TIMER
+    </div>
+    <div
+      style={{
+        fontSize: "30px",
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "20px",
+      }}
+    >
+      {updatedTimeValue}
+    </div>
+    <div
+      style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
+    >
+      <button
+        style={{ width: "70px", height: "35px" }}
+        onClick={() => {
+          setContinueOrNot(true);
         }}
       >
-        {updatedTimeValue}
-      </div>
-      <div
-        style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
+        Start
+      </button>
+      <button
+        style={{ width: "70px", height: "35px" }}
+        onClick={() => {
+          setContinueOrNot(false);
+        }}
       >
-        <button
-          style={{ width: "70px", height: "35px" }}
-          onClick={() => {
-            setContinueOrNot(true);
-          }}
-        >
-          Start
-        </button>
-        <button
-          style={{ width: "70px", height: "35px" }}
-          onClick={() => {
-            setContinueOrNot(false);
-          }}
-        >
-          Stop
-        </button>
-        <button
-          style={{ width: "70px", height: "35px" }}
-          onClick={() => {
-            setUpdatedTimeValue(timeValue);
-          }}
-        >
-          Reset
-        </button>
-      </div>
+        Stop
+      </button>
+      <button
+        style={{ width: "70px", height: "35px" }}
+        onClick={() => {
+          setUpdatedTimeValue(100);
+        }}
+      >
+        Reset
+      </button>
     </div>
+  </div>
+
+
+     
+  
+
   );
 };
 

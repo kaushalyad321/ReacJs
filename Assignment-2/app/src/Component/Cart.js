@@ -12,7 +12,6 @@ const Cart = () => {
     return sum;
   };
 
-  console.log(productsList);
   return (
     <>
       <div>Total Cart Value : {totalValue()}</div>

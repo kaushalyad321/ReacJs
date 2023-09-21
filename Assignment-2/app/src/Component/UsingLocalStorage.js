@@ -1,7 +1,6 @@
 import React from 'react'
 import UseLocalStorage from '../Component/UseLocalStorage';
 const UsingLocalStorage = () => {
-  
     const [count, setCount] = UseLocalStorage("count", 0);
     return (
         <div style={{  placeItems: "center" }}>
@@ -17,7 +16,6 @@ const UsingLocalStorage = () => {
                 Increment
             </button></span>
             <span>
-
             <button onClick={() => setCount((prevCount) => prevCount -1)}>
                 Decrement
             </button>
