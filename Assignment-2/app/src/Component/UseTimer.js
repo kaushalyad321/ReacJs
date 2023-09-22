@@ -1,67 +1,39 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const UseTimer = () => {
-  const [updatedTimeValue, setUpdatedTimeValue] = useState(100);
-  const [continueOrNot, setContinueOrNot] = useState(false);
-  const updateTimer = () => {
-    if (continueOrNot === true && updatedTimeValue > 0) {
-      setTimeout(() => {
-        setUpdatedTimeValue(updatedTimeValue - 1);
-      }, 1000);
-    }
-  } ;
-  updateTimer()
-  return ( <div>
-    <div
-      style={{ display: "flex", justifyContent: "center", fontSize: "40px" }}
-    >
-      CLOCK TIMER
-    </div>
-    <div
-      style={{
-        fontSize: "30px",
-        display: "flex",
-        justifyContent: "center",
-        marginTop: "20px",
-      }}
-    >
-      {updatedTimeValue}
-    </div>
-    <div
-      style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
-    >
-      <button
-        style={{ width: "70px", height: "35px" }}
-        onClick={() => {
-          setContinueOrNot(true);
-        }}
-      >
-        Start
-      </button>
-      <button
-        style={{ width: "70px", height: "35px" }}
-        onClick={() => {
-          setContinueOrNot(false);
-        }}
-      >
-        Stop
-      </button>
-      <button
-        style={{ width: "70px", height: "35px" }}
-        onClick={() => {
-          setUpdatedTimeValue(100);
-        }}
-      >
-        Reset
-      </button>
-    </div>
-  </div>
+  const [time, setTime] = useState(1);
+  const [continous, setContinous] = useState(false);
 
+  useEffect(() => {
+    let timespan;
+    if(time<=0) setContinous(false) ;
+    if (continous) {
+      timespan = setInterval(() => {
 
+      if(time>0){setTime((prevTime) => prevTime - 1)};
      
-  
+      }, 1000);
+    } else {
+      clearInterval(timespan);
+    }
 
-  );
+    return () => clearInterval(timespan);
+  }, [continous]);
+
+  const start = () => {
+    setContinous(true);
+  };
+
+  const stop = () => {
+    setContinous(false);
+  };
+
+  const reset = () => {
+    setTime(100);
+    setContinous(false);
+  };
+
+  return { time, continous, stop, start, reset };
 };
 
 export default UseTimer;

@@ -1,58 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import UseTimer from "./UseTimer";
-
 const UsingTimer = () => {
-  const [updatedTimeValue, continueOrNot,setUpdatedTimeValue,setContinueOrNot] = UseTimer(100, false);
-
+  const currentTime = UseTimer();
+  const [result,setResult]=useState(currentTime.time) ;
+  useEffect(()=>{
+      if(currentTime.time>0)  setResult(currentTime.time) ;
+      else{
+        setResult(0) ;
+      }
+  }
+,[currentTime.time])
   return (
-    <>
-    <div>
-      <div
-        style={{ display: "flex", justifyContent: "center", fontSize: "40px" }}
-      >
-        CLOCK TIMER
-      </div>
-      <div
-        style={{
-          fontSize: "30px",
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "20px",
-        }}
-      >
-        {updatedTimeValue}
-      </div>
-      <div
-        style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
-      >
-        <button
-          style={{ width: "70px", height: "35px" }}
-          onClick={() => {
-            setContinueOrNot(true);
-          }}
-        >
-          Start
-        </button>
-        <button
-          style={{ width: "70px", height: "35px" }}
-          onClick={() => {
-            setContinueOrNot(false);
-          }}
-        >
-          Stop
-        </button>
-        <button
-          style={{ width: "70px", height: "35px" }}
-          onClick={() => {
-            setUpdatedTimeValue(100);
-          }}
-        >
-          Reset
-        </button>
-      </div>
+    <div style={{marginLeft:'720px'}}>
+    
+     <p style={{fontSize:'50px',marginLeft:'100px'}}>{result}</p>
+     <button style={{width:'100px',height:'40px'}} onClick={currentTime.start}>Start</button>
+     <button style={{width:'100px',height:'40px'}} onClick={currentTime.stop}>Stop</button>
+     <button style={{width:'100px',height:'40px'}}onClick={currentTime.reset}>Reset</button>
+
     </div>
-    </>
-  )
+  );
 };
 
 export default UsingTimer;

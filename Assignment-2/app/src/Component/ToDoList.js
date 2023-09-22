@@ -2,14 +2,17 @@ import React, { useState } from "react";
 
 function ToDoList() {
   const [inputValue, setInputValue] = useState("");
+  const[index,setIndex]=useState(0) ;
+  
   const [Tasks, setTasks] = useState([]);
 
   const addTask = () => {
-    if (inputValue.length > 0) setTasks([...Tasks, inputValue]);
+    if (inputValue.length > 0) setTasks( Tasks => [...Tasks, { taskName : inputValue , taskId : index} ]);
+    setIndex(index+1) ;
   };
 
-  const removeTask = (Task) => {
-    let updatedTask = Tasks.filter((el) => el !== Task);
+  const removeTask = (taskId) => {
+    let updatedTask = Tasks.filter((el) => el.taskId !==taskId);
     setTasks(updatedTask);
   };
 
@@ -29,11 +32,11 @@ function ToDoList() {
             <div>
               <input type="checkbox"></input>
             </div>
-            <div style={{ fontSize: "25px" }}> {task}</div>
+            <div style={{ fontSize: "25px" }}> {task.taskName}</div>
             <div>
               <button
                 style={{ marginLeft: "30px" }}
-                onClick={() => removeTask(task)}
+                onClick={() => removeTask(task.taskId)}
               >
                 Remove Task
               </button>

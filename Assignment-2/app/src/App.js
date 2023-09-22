@@ -15,7 +15,7 @@ import Parent from "./Component/Parent";
 import StudentList from "./Component/StudentList";
 import EmployeeSalary from "./Component/EmployeeSalary";
 import DisplayTaskList from "./Component/DisplayTaskList";
-import UseTimer from "./Component/UseTimer";
+import UsingTimer from "./Component/UsingTimer";
 import CopyButton from './Component/CopyButton'
 import UsingLocalStorage from './Component/UsingLocalStorage';
 function App() {
@@ -183,8 +183,8 @@ function App() {
         Develop a component that utilizes the useTimer hook to display and
         control a countdown.
       </p>
-      <h1>Default timer value is 100</h1>
-      <UseTimer timeValue={100}/>
+      <h1 style={{marginLeft:'650px'}}>Default timer value is 100</h1>
+      <UsingTimer />
       
     </>
   );
