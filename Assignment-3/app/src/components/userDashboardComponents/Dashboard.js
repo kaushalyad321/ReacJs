@@ -1,33 +1,33 @@
-import React from 'react'
-import { useNavigate } from "react-router-dom";
-const Dashboard = () => {  
-  const navigate = useNavigate();
-
+import React from "react";
+import { NavLink, Route, Routes } from "react-router-dom";
+import Profile from "./Profile";
+import History from "./History";
+import Setting from "./Setting" ;
+const Dashboard = () => {
   return (
-    <div className='section'>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginRight: "30px",
-        }}>
+    <>
+      <div>DASHBOARD</div>
+      <nav>
+        <ul>
+          <li>
+            <NavLink to="Profile">PROFILE</NavLink>
+          </li>
+          <li>
+            <NavLink to="History">History</NavLink>
+          </li>
+          <li>
+            <NavLink to="Setting">SETTING</NavLink>
+          </li>
+        </ul>
+      </nav>
+      <Routes>
       
-        <div>
-          <h1>Dashboard</h1>
-        </div>
-        <div>
-          <button
-            onClick={() => {
-              navigate(-1);
-            }}>
-          
-            <img style={{ width: "50px" }} src="/Icons/arrow-left-solid.svg" />
-            
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+        <Route path='Profile' element={<Profile />} />
+        <Route path='History' element={<History />} />
+        <Route path='Setting' element={<Setting />} />
+      </Routes >
+    </>
+  );
+};
 
-export default Dashboard
+export default Dashboard;

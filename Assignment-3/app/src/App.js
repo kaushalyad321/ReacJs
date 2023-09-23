@@ -3,11 +3,11 @@ import "./App.css";
 import Parent from './components/Parent';
 import ProductList from './components/ProductList';
 import MainPageRouter from './components/MainPageRouter';
-import MainDashboard from './components/userDashboardComponents/MainDashboard';
 import RouterForProduct from './components/RouterForProduct';
-import FormMainPage from './components/Form/FormMainPage';
 import ParentForTheme from './components/ParentForTheme';
 import ChildForTheme from './components/ChildForTheme';
+import  ProtectedRouter  from './components/Form/ProtectedRouter';
+import DashboardMainPage from './components/userDashboardComponents/DashboardMainPage';
 function App() {
   return (
     <div>
@@ -49,7 +49,7 @@ function App() {
         to the login page. Display a message on the Home page welcoming the
         authenticated user.
       </p>
-      <FormMainPage />
+      {/* <ProtectedRoute /> */}
       <p className="quest">
         5.Extend the application to include nested routes for a more complex
         user interface. Create a new section of your application (e.g., a
@@ -58,7 +58,7 @@ function App() {
         navigation links to switch between the sub-pages within the Dashboard
         section. Customize the content displayed on each sub-page.
       </p>
-      <MainDashboard />
+      <DashboardMainPage />
 
       <p className="quest">
         6.Create a list of items (e.g., products, articles) in your application.
