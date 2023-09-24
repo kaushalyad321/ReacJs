@@ -1,33 +1,15 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
 const History = () => {
-  const navigate = useNavigate();
-
   return (
-    <div className='section'>
-       <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginRight: "30px",
-        }}>
+    <div>
+       <div style={{marginTop:'50px'}}>
+    <NavLink to='/History'></NavLink>
+    <NavLink to="/History/favhero" style={{width:'150px',fontSize:'30px',backgroundColor:'ButtonShadow'}}>Favourite Hero</NavLink>
+    <NavLink to="/History/favplayer" style={{width:'150px',fontSize:'30px',backgroundColor:'ButtonShadow',marginLeft:'20px'}}>Favourite Player</NavLink>
+  </div>
       
-        <div>
-          <h1>History</h1>
-        </div>
-        <div>
-          <button
-            onClick={() => {
-              navigate(-1);
-            }}>
-          
-            <img style={{ width: "50px" }} src="/Icons/arrow-left-solid.svg" />
-            
-          </button>
-        </div>
-      </div>
-
     </div>
   )
 }

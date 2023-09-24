@@ -1,36 +1,15 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+import { NavLink} from 'react-router-dom'
 
-const Profile = () => {
-  const navigate = useNavigate();
-
-  return (
-    <div className='section'>
-        <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginRight: "30px",
-        }}>
-      
-        <div>
-          <h1>Profile</h1>
-        </div>
-        <div>
-          <button
-            onClick={() => {
-              navigate(-1);
-            }}>
-          
-            <img style={{ width: "50px" }} src="/Icons/arrow-left-solid.svg" />
-            
-          </button>
-        </div>
-      </div>
-          
-
-    </div>
-  )
+const Profile= ()=> {
+return (
+ 
+    <div style={{marginTop:'50px'}}>
+    <NavLink to='/Profile'></NavLink>
+    <NavLink to="/Profile/name" style={{width:'150px',fontSize:'30px',backgroundColor:'ButtonShadow'}}>Name</NavLink>
+    <NavLink to="/Profile/email" style={{width:'150px',fontSize:'30px',backgroundColor:'ButtonShadow',marginLeft:'20px'}}>Email</NavLink>
+  </div>
+)
 }
 
 export default Profile

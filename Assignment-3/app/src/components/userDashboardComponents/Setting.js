@@ -1,34 +1,18 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom";
+import { NavLink } from 'react-router-dom'
 
-const Setting = () => {
-  const navigate = useNavigate();
+const Courses = () => {
+return (
+<div>
+<div style={{marginTop:'50px'}}>
+    <NavLink to='/Setting'></NavLink>
+    <NavLink to="/Setting/updatepic" style={{width:'150px',fontSize:'30px',backgroundColor:'ButtonShadow'}}>Update Picture</NavLink>
+    <NavLink to="/Setting/updatemail" style={{width:'150px',fontSize:'30px',backgroundColor:'ButtonShadow',marginLeft:'20px'}}>Update Email</NavLink>
+  </div>
+  
+</div>
 
-  return (
-    <div className='section'>
-       <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          marginRight: "30px",
-        }}>
-      
-        <div>
-          <h1>Setting</h1>
-        </div>
-        <div>
-          <button
-            onClick={() => {
-              navigate(-1);
-            }}>
-          
-            <img style={{ width: "50px" }} src="/Icons/arrow-left-solid.svg" />
-            
-          </button>
-        </div>
-      </div>
-    </div>
-  )
+)
 }
 
-export default Setting
+export default Courses

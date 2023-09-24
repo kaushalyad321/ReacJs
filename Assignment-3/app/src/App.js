@@ -49,7 +49,7 @@ function App() {
         to the login page. Display a message on the Home page welcoming the
         authenticated user.
       </p>
-      {/* <ProtectedRoute /> */}
+      {/* <ProtectedRouter /> */}
       <p className="quest">
         5.Extend the application to include nested routes for a more complex
         user interface. Create a new section of your application (e.g., a
