@@ -1,14 +1,36 @@
 import React from "react";
-import { NavLink,  } from "react-router-dom";
-
+import { Link,Outlet} from "react-router-dom";
+import Score from "./Score";
+import Recentactivities from "./Recentactivities";
 const Dashboard = () => {
   return (
     <>
-      <div style={{marginTop:'50px'}}>
-        <NavLink to='/'></NavLink>
-        <NavLink to="/Dashboard/score" style={{width:'150px',fontSize:'30px',backgroundColor:'ButtonShadow'}}>Score Card</NavLink>
-        <NavLink to="/Dashboard/recentactivities" style={{width:'150px',fontSize:'30px',backgroundColor:'ButtonShadow',marginLeft:'20px'}}>Recent Activities</NavLink>
+      <div style={{ marginTop: "50px" }}>
+        
+        <Link
+          to="/Dashboard/score"
+          style={{
+            width: "150px",
+            fontSize: "30px",
+            backgroundColor: "ButtonShadow",
+          }}
+        >
+          Score Card
+        </Link>
+        <Link
+          to="/Dashboard/recentactivities"
+          style={{
+            width: "150px",
+            fontSize: "30px",
+            backgroundColor: "ButtonShadow",
+            marginLeft: "20px",
+          }}
+        >
+          Recent Activities
+        </Link>
+
       </div>
+      <Outlet />
     </>
   );
 };

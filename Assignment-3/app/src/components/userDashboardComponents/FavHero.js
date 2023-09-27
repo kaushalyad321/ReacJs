@@ -2,8 +2,8 @@ import React from 'react'
 
 const FavHero = () => {
   return (
-    <div>
-      
+    <div style={{marginTop:'10px'}}>
+      Your Favourite Hero is Sunny Deol
     </div>
   )
 }

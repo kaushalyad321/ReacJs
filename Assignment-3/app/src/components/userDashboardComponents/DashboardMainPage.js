@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+ 
   NavLink,
   Routes,
   Route,
@@ -29,27 +29,28 @@ function DashboardMainPage() {
 
       <div className="butt"><NavLink to="Dashboard">Dashboard</NavLink></div>
       <div className="butt"> <NavLink to="Profile">Profile</NavLink></div>
-      <div className="butt"> <NavLink to="setting">Setting</NavLink></div>
+      <div className="butt"> <NavLink to="Setting">Setting</NavLink></div>
       <div className="butt"> <NavLink to="History">History</NavLink></div>
 
         </div>
       </nav>
       <Routes>
 
-        <Route path="Dashboard" element={<Dashboard />}>
-            <Route path="score" element={<Score />} />
-            <Route path="recentactivities" element={<RecentActivities />} />
+        <Route path="/Dashboard" element={<Dashboard />}>
+           
+            <Route  path="score" element={<Score />} />
+            <Route  path="recentactivities" element={<RecentActivities />} />
         </Route>
-        <Route path="Profile" element={<Profile />}>
+        <Route path="/Profile" element={<Profile />}>
            <Route path="name" element={<Name />} />
            <Route path="email" element={<Email />} />
         </Route>
-        <Route path="Setting" element={<Setting />}>
+        <Route path="/Setting" element={<Setting />}>
            <Route path="updatepic" element={<UpdatePic />} />
            <Route path="updatemail" element={<UpdateMail />} />
         </Route>
 
-        <Route path="History" element={<History />}>
+        <Route path="/History" element={<History />}>
            <Route path="favplayer" element={<FavPlayer />} />
            <Route path="favhero" element={<FavHero />} />
         </Route>

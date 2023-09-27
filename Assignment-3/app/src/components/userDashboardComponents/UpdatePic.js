@@ -2,8 +2,8 @@ import React from 'react'
 
 const UpdatePic = () => {
   return (
-    <div>
-      
+    <div style={{marginTop:'10px'}}>
+       Please Upload Pic
     </div>
   )
 }

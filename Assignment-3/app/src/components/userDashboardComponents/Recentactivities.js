@@ -3,9 +3,9 @@ import React from "react";
 const Recentactivities = () => {
   return (
     <div>
-      <ul id="myUL">
+      <ul  style={{listStyleType:'none'}}>
         <li>Hit the gym</li>
-        <li class="checked">Pay bills</li>
+        <li>Pay bills</li>
         <li>Meet George</li>
         <li>Buy eggs</li>
         <li>Read a book</li>

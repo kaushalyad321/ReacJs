@@ -2,8 +2,8 @@ import React from 'react'
 
 const Name = () => {
   return (
-    <div>
-     
+    <div style={{marginTop:'10px'}}>
+       Your Name is : Kaushal Kumar Yadav
     </div>
   )
 }
