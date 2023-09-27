@@ -21,7 +21,7 @@ const Pro = () => {
             onClick={() => {
               navigate(-1);
             }}>
-          <img style={{ width: "50px" }} src="/Icons/arrow-left-solid.svg" />
+          <img style={{ width: "50px" }} src="/Icons/arrow-left-solid.svg" alt='back'/>
           </button>
         </div>
       </div>

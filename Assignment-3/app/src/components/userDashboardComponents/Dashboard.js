@@ -1,7 +1,5 @@
 import React from "react";
 import { Link,Outlet} from "react-router-dom";
-import Score from "./Score";
-import Recentactivities from "./Recentactivities";
 const Dashboard = () => {
   return (
     <>

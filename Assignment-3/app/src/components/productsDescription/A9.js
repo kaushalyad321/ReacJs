@@ -21,7 +21,7 @@ const A9 = () => {
               navigate(-1);
             }}>
           
-            <img style={{ width: "50px" }} src="/Icons/arrow-left-solid.svg" />
+            <img style={{ width: "50px" }} alt="back" src="/Icons/arrow-left-solid.svg" />
             
           </button>
         </div>
