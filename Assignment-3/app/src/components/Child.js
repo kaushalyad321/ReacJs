@@ -1,7 +1,6 @@
 import React,{useContext,useState} from 'react'
 import {contextValue} from '../components/Parent'
-import SuccessLogin from './SuccessLogin';
-import LoginAgain from './LogInAgain'
+
 const Child = () => {
    const value = useContext(contextValue) ;
    const[result,setResult]=useState('')

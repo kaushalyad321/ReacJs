@@ -1,10 +1,8 @@
 import React from 'react'
 import "./App.css";
 import Parent from './components/Parent';
-import ProductList from './components/ProductList';
 import MainPageRouter from './components/MainPageRouter';
 import RouterForProduct from './components/RouterForProduct';
-import ParentForTheme from './components/ParentForTheme';
 import ChildForTheme from './components/ChildForTheme';
 import  ProtectedRouter  from './components/Form/ProtectedRouter';
 import DashboardMainPage from './components/userDashboardComponents/DashboardMainPage';

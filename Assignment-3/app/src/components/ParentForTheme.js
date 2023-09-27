@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { themeContext } from "./ChildForTheme";
 const ParentForTheme = () => {
   const theme = useContext(themeContext);
