@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+.mainCart{
+  width: 100%;
+  height: 200px;
+  background-color: rgb(158, 188, 189);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.child{
+  width:400px ;
+  height: 300px;
+  border-radius:450px
+}
+
+.vote{
+  margin-left: 35px;
+}
+
+.quest{
+   background-color: bisque;
+   font-size: larger;
+}
+.two{
+  height: 100px;
+
+}
