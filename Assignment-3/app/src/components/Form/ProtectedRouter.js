@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Login from "./Login";
-import Profile from "./AboutPage";
+import AboutPage from "./AboutPage";
 
 const ProtectedRouter = () => {
   const [isAuthenticated, setAuthenticated] = useState(false);
@@ -21,7 +21,7 @@ const ProtectedRouter = () => {
       />
       <Route
         path="/aboutpage"
-        element={isAuthenticated ? <Profile /> : <Navigate to="/login" />}
+        element={isAuthenticated ? <AboutPage /> : <Navigate to="/login" />}
       />
       <Route
         path="/*"
