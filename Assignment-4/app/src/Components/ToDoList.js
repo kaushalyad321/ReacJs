@@ -18,7 +18,7 @@ function ToDoList() {
       if(task['taskId']===taskId){
         return {...task,taskName:updatedTask}
       }
-      return {task}
+      return {...task}
     });
     setTasks(updatedTasks)
   };
