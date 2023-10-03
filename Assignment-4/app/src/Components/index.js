@@ -10,7 +10,7 @@ import FormValidation from "../Components/FormValidation";
 import FormSubmitOrNot from "../Components/FormSubmitOrNot";
 import FormValidationRule from "../Components/FormValidationRule";
 import DataTable from '../Components/DataTable'
-import SidebarNavigation from "../Components/SidebarNavigation";
+import Sidebar from "../Components/Sidebar";
 import FilterComponent from "../Components/FilterComponent";
 import ShowModel from '../Components/ShowModel'
 const AssignmentFour = () => {
@@ -75,7 +75,7 @@ const AssignmentFour = () => {
           component. Include links that allow users to navigate between different
           sections of your web app.
         </p>
-        <SidebarNavigation />
+        <Sidebar />
         <p className="quest">
           10.Create a form with Material-UI text fields and implement form
           validation. Ensure that error messages are displayed when the user
