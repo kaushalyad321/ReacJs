@@ -14,8 +14,8 @@ function FormValidation() {
    
     name: yup
       .string()
-       .min(2,"Name is too short!")
-      .max(13, "Name is too large!")
+      .min(2,"Name is too short!")
+      .max(15, "Name is too large!")
       .required("Name is Required"),
     email: yup.string().email("Invalid email").required("Email is Required").test("is-valid", (message) => `${message.path} is invalid`, (value) => value ? isEmailValidator(value) : new yup.ValidationError("Invalid value"))
   
