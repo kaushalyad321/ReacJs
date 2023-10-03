@@ -13,7 +13,7 @@ const ErrorBoundary = ({ children }) => {
   if (hasError) {
     return (
       <div>
-        <h2>Something went wrong</h2>
+        <h2>Something went wrong please refresh the page</h2>
         <p>{error.toString()}</p>
       </div>
     );

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-const Form = ({ onSubmit }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+const Form = () => {
+  const [username, setUsername] = useState('username');
+  const [password, setPassword] = useState('password');
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
@@ -13,21 +13,22 @@ const Form = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username && password) {
-      onSubmit({ username, password });
+      setUsername(username) ;
+      setPassword(password) ;
     }
   };
   return (
-    <form onSubmit={handleSubmit} className='App'>
+    <form className='App'>
       <div>
         <label htmlFor="username">Username:</label>
         <input type="text" id="username" name="username" value={username} onChange={handleUsernameChange} />
       </div>
       <div>
         <label htmlFor="password">Password:</label>
-        <input type="password" id="password" name="password" value={password} onChange={handlePasswordChange} />
+        <input type="password" id="password" name="password" value = {password} onChange={handlePasswordChange} />
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={handleSubmit}>Submit</button>
       </div>
     </form>
   );

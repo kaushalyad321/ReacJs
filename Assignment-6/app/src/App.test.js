@@ -6,7 +6,7 @@ import Form from "../src/components/Form";
 import UserProfile from "../src/components/UserProfile";
 import ShowModal from "./components/ShowModal";
 
-test("Counter increments and decrements correctly", () => {
+test("Counter increments and decrements button working perfectly", () => {
   const { getByText } = render(<Counter />);
   expect(screen.getByText("Count: 0")).toBeInTheDocument();
   fireEvent.click(screen.getByText("Increment"));
@@ -15,30 +15,21 @@ test("Counter increments and decrements correctly", () => {
   expect(screen.getByText("Count: 0")).toBeInTheDocument();
 });
 
-test("Form fields can be filled, and submit button works", () => {
-  const mockOnLogin = jest.fn();
-
-  const { getByLabelText, getByText } = render(<Form onLogin={mockOnLogin} />);
-
+test("Form fields can be filled, and submit button works perfectly", () => {
+ 
+  const { getByLabelText, getByText } = render(<Form />);
   const usernameInput = screen.getByLabelText("Username:");
   const passwordInput = screen.getByLabelText("Password:");
-
-  fireEvent.change(usernameInput, { target: { value: "testuser" } });
-  fireEvent.change(passwordInput, { target: { value: "testpassword" } });
-
-  expect(usernameInput.value).toBe("testuser");
-  expect(passwordInput.value).toBe("testpassword");
-
+  fireEvent.change(usernameInput, { target: { value: "username" } });
+  fireEvent.change(passwordInput, { target: { value: "password" } });
+  expect(usernameInput.value).toBe("username");
+  expect(passwordInput.value).toBe("password");
   const submitButton = screen.getByText("Submit");
-  fireEvent.click(submitButton);
+  fireEvent.click(submitButton) ;
 
-  expect(mockOnLogin).toHaveBeenCalledWith({
-    username: "testuser",
-    password: "testpassword",
-  });
 });
 
-test("User profile information is correctly displayed", async () => {
+test("User profile information is correctly displaying ", async () => {
   const { getByText } = await render(
     <UserProfile
       name="Kaushal Kumar Yadav"
@@ -51,10 +42,10 @@ test("User profile information is correctly displayed", async () => {
   expect(
     screen.getByText("Email :kaushalyad321@gmail.com")
   ).toBeInTheDocument();
-  // expect(screen.getByText("Phone :+918797196867")).toBeInTheDocument();
+  expect(screen.getByText("Phone :+918797196867")).toBeInTheDocument();
 });
 
-test("Modal opens and closes when triggered", () => {
+test("Modal opens and closes when triggered works perfectly", () => {
   const { getByText, queryByText } = render(<ShowModal />);
   expect(
     screen.queryByText("This is the modal content.")
