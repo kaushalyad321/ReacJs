@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 const SpecificInputValue = () => {
   const [inputValue, setInputValue] = useState("");
-  const [massage, setMassage] = useState("");
+  const[result,setResult]=useState('') ;
   const handleClick = () => {
-    if (inputValue === "show") {
-      setMassage("well done friend your input value is correct ");
-    }
+     if(inputValue==='show'){
+      setResult( <>hi friend your input value is correct</>)
+     }
+     else{
+      setResult('') ;
+     }
+
   };
 
-  let result = "";
-  if (massage.length > 0) {
-    result = massage;
-  }
-
+  
   return (
     <div>
       <label for="fname">Enter Specific Word:</label>

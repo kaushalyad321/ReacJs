@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
 
 const CheckPassword = () => {
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState(false);
 
-  const check = () => {
-    if (password === rePassword) {
-      setResult("both password is same and updated ");
-    } else {
-      setResult("password is different");
+  useEffect(()=>{
+    if(password===rePassword  && password.length>0){
+      setResult(false) ;
     }
-  };
+
+    else{
+      setResult(true) ;
+    }
+  })
   return (
     <div>
       <label for="password">Enter Password :</label>
@@ -32,12 +34,12 @@ const CheckPassword = () => {
       <div>
         <button
           style={{ marginTop: "20px", marginLeft: "80px" }}
-          onClick={check}
+          disabled = {result}
         >
-          Submit
+            Submit
         </button>
       </div>
-      {result}
+     
     </div>
   );
 };
