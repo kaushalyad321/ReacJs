@@ -18,7 +18,9 @@ const SidebarNavigation = () => {
           ></img>
         </button>
       </header>
-      <main></main>
+      <main>
+        
+      </main>
       <Sidebar open={isSidebarOpen} onClose={toggleSidebar} />
     </div>
   );

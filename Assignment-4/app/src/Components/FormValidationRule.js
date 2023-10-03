@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FormControl, TextField, FormGroup, Button } from "@mui/material";
 import { useFormik } from "formik";
+import isEmailValidator from 'validator/lib/isEmail';
+
 import * as yup from "yup";
 function FormValidationRule() {
   const [formFields, setFormFields] = useState({
@@ -19,7 +21,8 @@ function FormValidationRule() {
       .min(10, "mobile no is not valid")
       .max(10, "mobile no is not valid!")
       .required("mobile no is Required"),
-    email: yup.string().email("Invalid email").required("Email is Required"),
+    email: yup.string().email("Invalid email").required("Email is Required").test("is-valid", (message) => `${message.path} is invalid`, (value) => value ? isEmailValidator(value) : new yup.ValidationError("Invalid value"))
+  
   });
 
   const handleSubmit = () => {
