@@ -23,8 +23,7 @@ const ReusableButton = (props) => {
         backgroundColor: "white",
       });
     }
-  }, []);
-
+  },[]);
   return (
     <div>
       <button style={style}>Button</button>

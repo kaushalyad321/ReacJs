@@ -6,7 +6,6 @@ function AxiosFormPost() {
     name: "",
     email: "",
   });
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

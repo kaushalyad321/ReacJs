@@ -74,15 +74,21 @@ function App() {
       different styles (e.g., primary, secondary, danger) and click handlers.
       Demonstrate how to use this component in a sample application.
     </p>
+    <div style={{display:'flex',justifyContent:'space-evenly'}}>
     <ReusableButton name='primary'/>
     <ReusableButton name='secondary' />
     <ReusableButton name='danger' />
+    </div>
     <p className="quest">
       13.Design and implement a Modal component in React. Allow customization
       of the modal content and provide options to open, close, and toggle the
       modal. Use this component to display various types of content.
     </p>
-    <CustomizedModal type='danger'/>
+    <div style={{display:'flex',justifyContent:'space-evenly'}}>
+    <CustomizedModal title='First Modal' content='this is our first modal content plz ignore it'/>
+    <CustomizedModal title='Second Modal' content='this is our second modal content plz ignore it' />
+    <CustomizedModal title='Third Modal' content='this is our third modal content plz ignore it' />
+    </div>
     <p className="quest">
       14.Create an HOC named withAuth that restricts access to a specific
       component to authenticated users only. Implement this HOC on a sample
