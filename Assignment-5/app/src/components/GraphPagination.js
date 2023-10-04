@@ -14,7 +14,7 @@ const GraphPagination = () => {
    
   ];
   const rows = data['locations'] ;
-  console.log(rows)
+  
 return (
   <div style={{alignItems:'start'}}>
   <DataGrid 

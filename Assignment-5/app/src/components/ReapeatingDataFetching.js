@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function FetchedData() {
+function ReapeatingDataFetching() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -47,5 +47,5 @@ function FetchedData() {
   );
 }
 
-export default FetchedData;
+export default ReapeatingDataFetching;
 

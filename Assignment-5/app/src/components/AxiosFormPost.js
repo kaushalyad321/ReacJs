@@ -4,17 +4,28 @@ import axios from "axios";
 const AxiosFormPost = () => {
   const [name, setName] = useState("");
   const [fatherName, setFatherName] = useState("");
-  const[check,setCheck] =useState('') ;
-  const [obj, setObj] = useState({
-    name: "",
-    fatherName: "",
-  });
-  const sendData=()=>{
-  axios.post('https://rapidapi.com/learn/api/rest',obj,{timeout:2000})
-  .then(function (response) {
-    setCheck('your data successfully submitted') ;
-    console.log('success')
-  })}
+  const [post, setPost] = React.useState(null);
+  const baseURL = "https://jsonplaceholder.typicode.com/posts";
+  React.useEffect(() => {
+    axios.get(`${baseURL}/1`).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+
+  function createPost() {
+    axios
+      .post(baseURL, {
+        name: name,
+        fatherName : fatherName
+      })
+      .then((response) => {
+        setPost(response.data);
+      });
+  }
+
+ 
+
+
   return (
     <div>
       <form>
@@ -34,9 +45,8 @@ const AxiosFormPost = () => {
             }}
           ></input>
         </div>
-        <button onClick={()=>{setObj({name:name,fatherName:fatherName});sendData()}}>Submit</button>
+        <button onClick={createPost}>Submit</button>
       </form>
-      {check}
     </div>
   );
 };

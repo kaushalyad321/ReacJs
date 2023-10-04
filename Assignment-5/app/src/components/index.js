@@ -1,6 +1,6 @@
 
 import FetchedData from "../components/FetchedData";
-import Reapeating from '../components/ReapeatingDataFetching'
+import ReapeatingDataFetching from '../components/ReapeatingDataFetching'
 import DatafetchingSpinner from "../components/DatafetchingSpinner";
 import DataFetchingAxios from "../components/DataFetchingAxios";
 import ModifiedDataFetchingAxios from "../components/ModifiedDataFetchingAxious";
@@ -8,7 +8,7 @@ import AxiosFormPost from "../components/AxiosFormPost";
 import PaginationFetchedData from "../components/PaginationFetchedData";
 import DataFetchingUsingGraph from "../components/DataFetchingUsingGraph";
 import GraphPagination from "../components/GraphPagination";
-import RetryUsingGraph from '../components/RetryUsingGraph' ;
+import RetryUsingGraph from "./RetryUsingGraph";
 import ReusableButton from "../components/ReusableButton";
 import HocComponentForDataFetching from "../components/HocComponentForDataFetching";
 import WithLogger from "../components/WithLogger";
@@ -29,7 +29,7 @@ function AssignmentFive() {
         message if the request fails and provide a way for the user to retry the
         request.
       </p>
-      <Reapeating />
+      <ReapeatingDataFetching />
       <p className="quest">
         3.Add a loading indicator (e.g., a spinner) to the component. Display it
         while the data is being fetched and hide it once the data is loaded.
