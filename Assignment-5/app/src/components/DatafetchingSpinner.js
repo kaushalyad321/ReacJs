@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function FetchedData() {
+function DatafetchingSpinner() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -29,7 +29,7 @@ function FetchedData() {
       <h1>Data fetched from API</h1>
      {
       Object.keys(data).map( (key)=> {
-              return <div>
+              return <div key={key}>
                  <span>{key}:</span>
                  <span>{data[key]}</span>
               </div>
@@ -40,5 +40,5 @@ function FetchedData() {
   );
 }
 
-export default FetchedData;
+export default DatafetchingSpinner;
 

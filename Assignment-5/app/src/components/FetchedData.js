@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 
 function FetchedData() {
@@ -6,8 +5,7 @@ function FetchedData() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-   
-    fetch("https://official-joke-api.appspot.com/random_joke") 
+    fetch("https://official-joke-api.appspot.com/random_joke")
       .then((response) => response.json())
       .then((data) => {
         setData(data);
@@ -17,9 +15,9 @@ function FetchedData() {
         console.error("Error fetching data:", error);
         setLoading(false);
       });
-  }, []); 
+  }, []);
 
-//   console.log(data)
+  //   console.log(data)
 
   if (loading) {
     return <div>Loading...</div>;
@@ -28,15 +26,14 @@ function FetchedData() {
   return (
     <div>
       <h1>Data fetched from API</h1>
-     {
-      Object.keys(data).map( (key)=> {
-              return <div key={key}>
-                 <span>{key}:</span>
-                 <span>{data[key]}</span>
-              </div>
-            })
-            }
-     
+      {Object.keys(data).map((key) => {
+        return (
+          <div key={key}>
+            <span>{key}:</span>
+            <span>{data[key]}</span>
+          </div>
+        );
+      })}
     </div>
   );
 }
