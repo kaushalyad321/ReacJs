@@ -5,37 +5,12 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Button from '@mui/material/Button';
 
-const ModalDialog = ({ open, onClose, title, content, onSubmit ,type}) => {
-let modalStyle ;
-if(type==='primary'){
-  modalStyle={
-    color:'white' ,
-    backgroundColor:'black'
-  }
-
-}
-
-if(type==='danger'){
-  modalStyle={
-  color:'red' ,
-  backgroundColor:'white'
-  }
-
-}
-
-if(type==='secondary'){
-  modalStyle={
-    color:'blue' ,
-    backgroundColor:'grey'
-  }
-
-}
-
+const ModalDialog = ({ open, onClose, title, content, onSubmit }) => {
 
 
 
   return (
-    <Dialog open={open} onClose={onClose} color={type}>
+    <Dialog open={open} onClose={onClose} >
       <DialogTitle>{title}</DialogTitle>
       <DialogContent>{content}</DialogContent>
       <DialogActions>

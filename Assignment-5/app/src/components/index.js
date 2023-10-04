@@ -95,7 +95,7 @@ function AssignmentFive() {
         of the modal content and provide options to open, close, and toggle the
         modal. Use this component to display various types of content.
       </p>
-      <CustomizedModal />
+      <CustomizedModal type='danger'/>
       <p className="quest">
         14.Create an HOC named withAuth that restricts access to a specific
         component to authenticated users only. Implement this HOC on a sample
