@@ -6,6 +6,9 @@
   background-color: bisque;
   font-size: 25px;
 }
+h1{
+  color: red;
+}
 
 .spin {
   border: 16px solid #0042A4;

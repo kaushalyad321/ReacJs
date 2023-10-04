@@ -6,21 +6,20 @@ const HocRouter = () => {
   return (
     <Router>
       <nav>
-        <ul>
-          <li>
+        <div>
+          <div>
             <Link to="/">Home</Link>
-          </li>
+          </div>
           <li>
             <Link to="/protected">Protected Page</Link>
           </li>
-        </ul>
+        </div>
       </nav>
 
       <hr />
 
       <Routes>
         <Route path="/" exact></Route>
-
         <Route path="/protected" component={ProtectedComponent} />
       </Routes>
     </Router>

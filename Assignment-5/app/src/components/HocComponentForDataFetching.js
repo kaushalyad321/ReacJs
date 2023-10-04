@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 const DataFetching = (WrappedComponent, apiUrl) => {
   return function DataFetchingComponent(props) {
     const [data, setData] = useState([]);

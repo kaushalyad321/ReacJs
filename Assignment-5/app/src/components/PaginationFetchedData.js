@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { DataGrid }  from '@mui/x-data-grid';
 
 function PaginationFetchedData() {
   const [data, setData] = useState([]);
@@ -17,8 +18,13 @@ function PaginationFetchedData() {
       });
   }, []);
 
-  // console.log(data["results"]);
-
+  const columns = [
+    { field: 'title', headerName: 'Title', width: 350 },
+    { field: 'episode_id', headerName: 'Episode_id', width: 340 },
+    { field: 'opening_crawl', headerName: 'Opening Crawl', width: 1100 },
+    
+  ];
+  const rows = data['results'] ;
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -26,19 +32,18 @@ function PaginationFetchedData() {
   return (
     <div style={{alignItems:'start'}}>
       <h1>Data fetched from API</h1>
-      {Object.keys(data["results"]).map((key) => {
-        const objData = data["results"][key];
-        
-        const result = Object.keys(objData).map((key2) => {
-          return (
-            <div > 
-              <span style={{fontSize:'35px' ,color:'red',marginTop:'20px'}}>{key2}:</span><span style={{fontSize:'30px'}}>{objData[key2]}</span>
-            </div>
-          );
-        });
-        return <div  style={{backgroundColor:'grey',marginTop:'30px',textAlign:'start'}}>{result}</div>;
-        
-      })}
+      <DataGrid 
+        rows={rows}
+        columns={columns}
+        initialState={{
+          pagination: {
+            paginationModel: { page: 0, pageSize: 2},
+          },
+        }}
+        pageSizeOptions={[2, 4,6]}
+        getRowId={(row) => row.title}
+
+       />
     </div>
   );
 }

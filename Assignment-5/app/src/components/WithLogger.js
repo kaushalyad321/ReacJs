@@ -1,18 +1,28 @@
-import React, { useEffect } from 'react';
-
-
+import React, { useEffect } from "react";
 const withLogger = (WrappedComponent) => {
   const WithLogger = (props) => {
     useEffect(() => {
-      console.log(`Component ${WrappedComponent.displayName || WrappedComponent.name} mounted`);
+      console.log(
+        `Component ${
+          WrappedComponent.displayName || WrappedComponent.name
+        } mounted`
+      );
 
       return () => {
-        console.log(`Component ${WrappedComponent.displayName || WrappedComponent.name} unmounted`);
+        console.log(
+          `Component ${
+            WrappedComponent.displayName || WrappedComponent.name
+          } unmounted`
+        );
       };
     }, []);
 
     useEffect(() => {
-      console.log(`Component ${WrappedComponent.displayName || WrappedComponent.name} updated`);
+      console.log(
+        `Component ${
+          WrappedComponent.displayName || WrappedComponent.name
+        } updated`
+      );
     });
 
     return <WrappedComponent {...props} />;
@@ -25,14 +35,11 @@ function MyComponent() {
   return <div>My Component</div>;
 }
 
-
 const MyComponentWithLogger = withLogger(MyComponent);
-
-
 function WithLogger() {
   return (
     <div>
-      <h1>App</h1>
+      <h1>This app is to check that when app is mounting , updating and unmounting</h1>
       <MyComponentWithLogger />
     </div>
   );

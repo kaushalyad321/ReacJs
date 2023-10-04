@@ -4,15 +4,17 @@ import axios from "axios";
 const AxiosFormPost = () => {
   const [name, setName] = useState("");
   const [fatherName, setFatherName] = useState("");
+  const[check,setCheck] =useState('') ;
   const [obj, setObj] = useState({
     name: "",
     fatherName: "",
   });
-  console.log(obj)
-  axios.post('https://api.restful-api.dev/objects',obj)
+  const sendData=()=>{
+  axios.post('https://rapidapi.com/learn/api/rest',obj,{timeout:2000})
   .then(function (response) {
-    console.log(response);
-  })
+    setCheck('your data successfully submitted') ;
+    console.log('success')
+  })}
   return (
     <div>
       <form>
@@ -32,8 +34,9 @@ const AxiosFormPost = () => {
             }}
           ></input>
         </div>
-        <button onClick={()=>{setObj({name:name,fatherName:fatherName})}}>Submit</button>
+        <button onClick={()=>{setObj({name:name,fatherName:fatherName});sendData()}}>Submit</button>
       </form>
+      {check}
     </div>
   );
 };

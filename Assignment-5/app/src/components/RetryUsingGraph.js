@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_LOCATIONS } from "./Query";
-const DataFetchingUsingGraph = () => {
+const RetryUsingGraph = () => {
   const { loading, error, data } = useQuery(GET_LOCATIONS);
 
   if (loading) return <p>Loading...</p>;
@@ -8,27 +8,20 @@ const DataFetchingUsingGraph = () => {
   if (error) return <p>Error : {error.message}</p>;
 
   return data.locations.map(({ id, name, description, photo }) => (
-    <div>
-      <div key={id}>
-        <h3>{name}</h3>
+    <div key={id}>
+      <h3>{name}</h3>
 
-        <img
-          width="400"
-          height="250"
-          alt="location-reference"
-          src={`${photo}`}
-        />
+      <img width="400" height="250" alt="location-reference" src={`${photo}`} />
 
-        <br />
+      <br />
 
-        <b>About this location:</b>
+      <b>About this location:</b>
 
-        <p>{description}</p>
+      <p>{description}</p>
 
-        <br />
-      </div>
+      <br />
     </div>
   ));
 };
 
-export default DataFetchingUsingGraph;
+export default RetryUsingGraph;
