@@ -4,29 +4,24 @@ function ReapeatingDataFetching() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-   
+  
+   const changeLoading=()=>{
     fetch("https://official-joke-api.appspot.com/random_joke") 
       .then((response) => response.json())
       .then((data) => {
         setData(data);
-        setLoading(false);
+        setLoading(false)
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
         setLoading(false);
       });
-  }, [loading]); 
-
-  const changeLoading =()=>{
-    if(loading===true){
-        setLoading(false) ;
+  
     }
-    else{
-        setLoading(true) ;
-    }
-  }
- 
+    useEffect(()=>{
+     changeLoading() ;
+    },[])
+  
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -42,7 +37,7 @@ function ReapeatingDataFetching() {
               </div>
             })
             }
-        <button onClick={changeLoading}>Refresh</button>
+        <button onClick={()=>{setLoading(true);changeLoading()}}>Refresh</button>
     </div>
   );
 }

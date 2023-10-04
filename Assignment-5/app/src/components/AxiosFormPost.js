@@ -1,54 +1,52 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const AxiosFormPost = () => {
-  const [name, setName] = useState("");
-  const [fatherName, setFatherName] = useState("");
-  const [post, setPost] = React.useState(null);
-  const baseURL = "https://jsonplaceholder.typicode.com/posts";
-  React.useEffect(() => {
-    axios.get(`${baseURL}/1`).then((response) => {
-      setPost(response.data);
-    });
-  }, []);
+function AxiosFormPost() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+  });
 
-  function createPost() {
-    axios
-      .post(baseURL, {
-        name: name,
-        fatherName : fatherName
-      })
-      .then((response) => {
-        setPost(response.data);
-      });
-  }
-
- 
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("https://httpbin.org/post", formData);
+      console.log("Response:", response.data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   return (
     <div>
-      <form>
+      
+      <form onSubmit={handleSubmit}>
         <div>
-          <label>Enter the username:</label>
+          <label htmlFor="name">Name:</label>
           <input
+            type="text"
+            id="name"
+            name="name"
             onChange={(e) => {
-              setName(e.target.value);
+              setFormData({ ...formData, name: e.target.value });
             }}
-          ></input>
+          />
         </div>
         <div>
-          <label>Enter the Password:</label>
+          <label htmlFor="email">Email:</label>
           <input
+            type="email"
+            id="email"
+            name="email"
             onChange={(e) => {
-              setFatherName(e.target.value);
+              setFormData({ ...formData, email: e.target.value });
             }}
-          ></input>
+          />
         </div>
-        <button onClick={createPost}>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
-};
+}
 
 export default AxiosFormPost;
