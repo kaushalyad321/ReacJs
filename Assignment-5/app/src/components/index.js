@@ -3,7 +3,7 @@ import FetchedData from "../components/FetchedData";
 import ReapeatingDataFetching from '../components/ReapeatingDataFetching'
 import DatafetchingSpinner from "../components/DatafetchingSpinner";
 import DataFetchingAxios from "../components/DataFetchingAxios";
-import ModifiedDataFetchingAxios from "../components/ModifiedDataFetchingAxious";
+import ModifiedDataFetchingAxios from "./ModifiedDataFetchingAxios";
 import AxiosFormPost from "../components/AxiosFormPost";
 import PaginationFetchedData from "../components/PaginationFetchedData";
 import DataFetchingUsingGraph from "../components/DataFetchingUsingGraph";
