@@ -1,6 +1,6 @@
 
 import "./App.css";
-import { FetchedData ,ReapeatingDataFetching,DatafetchingSpinner,PaginationFetchedData,DataFetchingAxios,ModifiedDataFetchingAxios,AxiosFormPost,DataFetchingUsingGraph,GraphPagination,RetryUsingGraph,ReusableButton,CustomizedModal,HocRouter,WithLogger,HocComponentForDataFetching } from "./components/index";
+import { FetchedData ,ReapeatingDataFetching,DatafetchingSpinner,PaginationFetchedData,DataFetchingAxios,ModifiedDataFetchingAxios,AxiosFormPost,DataFetchingUsingGraph,GraphPagination,RetryUsingGraph,ReusableButton,CustomizedModal,HocRouter,WithLogger,HocComponentForDataFetching,ExtendedGraphPagination } from "./components/index";
 function App() {
   return (
     <div className="App">
@@ -63,6 +63,7 @@ function App() {
       such as adding, updating, or deleting items. Implement a form and
       mutation queries to interact with the GraphQL API.
     </p>
+    <ExtendedGraphPagination />
     <p className="quest">
       11.Demonstrate how to handle errors in GraphQL queries and mutations.
       Create a React component that displays error messages when GraphQL
