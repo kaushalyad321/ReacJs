@@ -1,29 +1,20 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-import ProtectedComponent from "./ProtectedComponent";
-
-const HocRouter = () => {
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom';
+import withAuth from './withAuth'; 
+const Home = () => <h1>Welcome to the Home Page</h1>;
+const Dashboard = () => <h1>Dashboard - Authenticated Users Only</h1>;
+const App = () => {
+  const authenticatedDashboard=withAuth(Dashboard) ;
   return (
     <Router>
-      <nav>
-        <div>
-          <div>
-            <Link to="/">Home</Link>
-          </div>
-          <li>
-            <Link to="/protected">Protected Page</Link>
-          </li>
-        </div>
-      </nav>
-
-      <hr />
-
+      <NavLink to='/'>Home</NavLink>
+      <NavLink to='/dashboard'>Dashboard</NavLink>
       <Routes>
-        <Route path="/" exact></Route>
-        <Route path="/protected" component={ProtectedComponent} />
+        <Route path="/"  element={<Home />} />
+        <Route path="/dashboard" component={authenticatedDashboard}/>
       </Routes>
     </Router>
   );
 };
 
-export default HocRouter;
+export default App;

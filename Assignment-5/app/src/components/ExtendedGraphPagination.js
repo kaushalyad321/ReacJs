@@ -2,13 +2,25 @@ import { useQuery } from "@apollo/client";
 import { GET_LOCATIONS } from "./Query";
 import { DataGrid } from "@mui/x-data-grid";
 import { useState } from "react";
-
+import { gql, useMutation } from "@apollo/client";
 const ExtendedGraphPagination = () => {
+  const ADD_LOCATION = gql`
+    mutation GetLocations($type: String!) {
+        locations {
+            id
+            name
+            description
+            photo
+          }
+    }
+  `;
+
   const [id, setId] = useState("");
   const [typeName, setTypeName] = useState("");
   const [description, setDescription] = useState("");
   const [locationName, setLocationName] = useState("");
   const [obj, setObj] = useState("");
+  const [addLocation] = useMutation(ADD_LOCATION);
   const { loading, error, data } = useQuery(GET_LOCATIONS);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
@@ -70,7 +82,7 @@ const ExtendedGraphPagination = () => {
           ></input>
         </div>
 
-        <button>Add Data</button>
+        <button onClick={(e)=>{ e.preventDefault();setObj({id:id ,typeName:typeName,description:description,locationName:locationName})}}>Add Data</button>
         <button>Update Data</button>
         <button>Delete Data</button>
       </form>

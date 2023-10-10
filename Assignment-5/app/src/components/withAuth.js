@@ -1,20 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Navigate } from 'react-router-dom';
+const isAuthenticated = () => {
+  return true;
+};
 
 const withAuth = (WrappedComponent) => {
-  return class extends Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        isAuthenticated: false, // You can implement your authentication logic here
-      };
-    }
-
+  return  {
     render() {
-      if (this.state.isAuthenticated) {
+      if (isAuthenticated()) {
         return <WrappedComponent {...this.props} />;
       } else {
-        // Redirect to the login page or display an error message
         return <Navigate to="/login" />;
       }
     }
