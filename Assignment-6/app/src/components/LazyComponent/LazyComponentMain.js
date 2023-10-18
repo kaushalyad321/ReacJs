@@ -1,8 +1,10 @@
 import React, { lazy, Suspense } from "react";
 import { Route, Routes, Link } from "react-router-dom";
+
 const Setting = lazy(() => import("../Setting"));
 const History = lazy(() => import("../History"));
 const Profile = lazy(() => import("../Profile"));
+
 const LazyComponentMain = () => {
   return (
     <div>
@@ -22,12 +24,14 @@ const LazyComponentMain = () => {
           </li>
         </ul>
       </nav>
+
       <hr />
+
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/profile" element={<Profile/>} />
-          <Route path="/history" element={<History/>} />
-          <Route path="/setting" element={<Setting/>} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/setting" element={<Setting />} />
         </Routes>
       </Suspense>
     </div>

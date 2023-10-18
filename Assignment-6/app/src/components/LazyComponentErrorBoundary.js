@@ -1,9 +1,11 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import ErrorBoundary from "../components/ErrorBoundary";
+
 const Setting = lazy(() => import("../components/Setting"));
 const History = lazy(() => import("../components/History"));
 const Profile = lazy(() => import("../components/Profile"));
+
 const App = () => {
   return (
     <div>
@@ -23,13 +25,15 @@ const App = () => {
           </li>
         </ul>
       </nav>
+
       <hr />
+
       <ErrorBoundary>
         <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/profile" element={<Profile />} />
             <Route path="/history" element={<History />} />
-            <Route path="/Setting" element={<Setting />} />
+            <Route path="/setting" element={<Setting />} />
           </Routes>
         </Suspense>
       </ErrorBoundary>
